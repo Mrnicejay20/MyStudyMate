@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate - Student Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h2>📚 StudyMate</h2>
+
+            <nav>
+                <button class="nav-btn active" data-view="dashboard">
+                    Dashboard
+                </button>
+
+                <button class="nav-btn" data-view="tasks">
+                    My Study Tasks
+                </button>
+
+                <button class="nav-btn" data-view="add-task">
+                    Add New Task
+                </button>
+            </nav>
+
+            <p class="sidebar-footer">Your learning companion</p>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Dashboard View -->
+            <section id="dashboard" class="view active">
+                <h1>Welcome to StudyMate!</h1>
+                <p>Organise your learning and stay on track.</p>
+
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>Total Tasks</h3>
+                        <p id="totalTasks">0</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Completed</h3>
+                        <p id="completedTasks">0</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Pending</h3>
+                        <p id="pendingTasks">0</p>
+                    </div>
+                </div>
+
+                <h2>Study Progress</h2>
+                <div class="progress-container">
+                    <div id="progressBar"></div>
+                </div>
+                <p id="progressText">0% completed</p>
+
+                <h2>Upcoming Study Tasks</h2>
+                <div id="upcomingTasks"></div>
+            </section>
+
+            <!-- My Tasks View -->
+            <section id="tasks" class="view">
+                <h1>My Study Tasks</h1>
+                <p>View and manage your study activities.</p>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search tasks or subjects..."
+                >
+
+                <select id="filterTasks">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+
+                <div id="taskList"></div>
+            </section>
+
+            <!-- Add Task View -->
+            <section id="add-task" class="view">
+                <h1>Add a Study Task</h1>
+                <p>Create a new activity for your study schedule.</p>
+
+                <form id="taskForm">
+
+                    <label for="subject">Subject</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="e.g. Computer Security"
+                        required
+                    >
+
+                    <label for="description">Task Description</label>
+                    <textarea
+                        id="description"
+                        placeholder="What do you need to study?"
+                        required
+                    ></textarea>
+
+                    <label for="deadline">Deadline</label>
+                    <input
+                        type="date"
+                        id="deadline"
+                        required
+                    >
+
+                    <button type="submit">Save Study Task</button>
+
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
